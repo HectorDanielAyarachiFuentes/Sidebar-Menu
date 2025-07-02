@@ -210,3 +210,80 @@ body {
 
 
 /* ... (pega el resto del CSS, incluyendo la @media query, aquí) ... */
+/* --- MEJORAS PARA CELULARES PEQUEÑOS (320px a 480px) --- */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        padding-left: 0;
+        padding-bottom: 80px;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        top: auto;
+        transform: none;
+        border-radius: 15px 15px 0 0;
+        padding: 5px 0;
+        box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    }
+
+    .menu-lateral ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu-lateral ul li {
+        margin-bottom: 0;
+    }
+
+    .menu-lateral ul li a {
+        flex-direction: column;
+        font-size: 12px;
+        padding: 8px;
+        background-color: transparent;
+        color: white;
+    }
+
+    .menu-lateral ul li a .fa-solid {
+        font-size: 20px;
+        margin-bottom: 3px;
+    }
+
+    .texto-link {
+        opacity: 1;
+        pointer-events: auto;
+        margin-left: 0;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .contenido-principal {
+        padding: 15px 10px;
+        margin-left: 0 !important;
+    }
+
+    .tarjeta-contenido {
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    }
+
+    #contacto form {
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    #contacto input, #contacto textarea {
+        font-size: 14px;
+    }
+
+    #contacto button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
