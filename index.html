@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sidebar Menu</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Dinámico</title>
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Hoja de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Menú Lateral -->
+    <nav class="menu-lateral">
+        <ul>
+            <!-- Cada enlace tiene un atributo data-target que apunta al ID de la sección correspondiente -->
+            <li><a href="#" class="activo" data-target="galeria"><i class="fa-solid fa-palette"></i><span class="texto-link">Galería</span></a></li>
+            <li><a href="#" data-target="sobre-mi"><i class="fa-solid fa-user-pen"></i><span class="texto-link">Sobre Mí</span></a></li>
+            <li><a href="#" data-target="blog"><i class="fa-solid fa-feather-pointed"></i><span class="texto-link">Blog</span></a></li>
+            <li><a href="#" data-target="contacto"><i class="fa-solid fa-envelope"></i><span class="texto-link">Contacto</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido Principal de la Página -->
+    <main class="contenido-principal">
+        <!-- Sección Galería (Visible por defecto) -->
+        <div id="galeria" class="contenido-seccion activa">
+            <h1>Galería de Arte</h1>
+            <p>Una colección de mis trabajos más recientes y favoritos. Explora las diferentes técnicas y temáticas.</p>
+            <img src="https://picsum.photos/seed/galeria/600/400" alt="Obra de arte">
+        </div>
+
+        <!-- Sección Sobre Mí (Oculta por defecto) -->
+        <div id="sobre-mi" class="contenido-seccion">
+            <h1>Sobre Mí</h1>
+            <p>Soy un artista apasionado por capturar la belleza en lo cotidiano. Mi viaje en el mundo del arte comenzó hace más de 10 años...</p>
+            <img src="https://picsum.photos/seed/artista/600/400" alt="Foto del artista">
+        </div>
+
+        <!-- Sección Blog (Oculta por defecto) -->
+        <div id="blog" class="contenido-seccion">
+            <h1>Blog Creativo</h1>
+            <p>Aquí comparto mis procesos, inspiraciones y pensamientos sobre el arte y la creatividad. ¡Lee mi última entrada sobre la teoría del color!</p>
+            <img src="https://picsum.photos/seed/blog/600/400" alt="Escritorio de trabajo">
+        </div>
+
+        <!-- Sección Contacto (Oculta por defecto) -->
+        <div id="contacto" class="contenido-seccion">
+            <h1>Contacto</h1>
+            <p>¿Interesado en una comisión o una colaboración? Envíame un mensaje a través de este formulario.</p>
+            <form>
+                <input type="text" placeholder="Tu Nombre">
+                <input type="email" placeholder="Tu Correo Electrónico">
+                <textarea placeholder="Tu Mensaje"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

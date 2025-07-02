@@ -1,0 +1,212 @@
+/* Estilos generales para la página */
+:root {
+    --color-fondo: #d8dde2;
+    --color-principal: #1877f2;
+    --color-principal-hover: #166fe5;
+    --color-menu-fondo: #242526;
+    --color-texto-menu: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    margin: 0;
+    /* Dejamos espacio para el menú lateral en escritorio */
+    padding-left: 115px;
+    /* Y para el menú inferior en móvil */
+    padding-bottom: 100px;
+    transition: padding-left 0.5s ease;
+}
+
+/* --- ESTILOS PARA ESCRITORIO (pantallas grandes) --- */
+.menu-lateral {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-menu-fondo);
+    width: 85px;
+    padding: 25px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: width 0.5s ease;
+    z-index: 1000;
+}
+
+.menu-lateral:hover {
+    width: 260px;
+}
+
+/* Hacemos que el contenido se mueva cuando el menú se expande */
+.menu-lateral:hover ~ .contenido-principal {
+    margin-left: 175px; /* 260px (ancho hover) - 85px (ancho inicial) */
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0 15px;
+    margin: 0;
+}
+
+.menu-lateral ul li {
+    margin-bottom: 10px;
+}
+
+.menu-lateral ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-texto-menu);
+    background-color: var(--color-principal);
+    padding: 12px;
+    border-radius: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.menu-lateral ul li a:hover {
+    background-color: var(--color-principal-hover);
+}
+
+.menu-lateral ul li a .fa-solid {
+    font-size: 24px;
+    min-width: 45px;
+    text-align: center;
+}
+
+.texto-link {
+    margin-left: 15px;
+    font-size: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease 0.1s;
+}
+
+.menu-lateral:hover .texto-link {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Estilos para el contenido principal */
+.contenido-principal {
+    padding: 20px;
+    transition: margin-left 0.5s ease;
+}
+
+.contenido-principal h1 {
+    color: #333;
+}
+
+.tarjeta-contenido {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.tarjeta-contenido img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* --- ESTILOS RESPONSIVOS PARA MÓVILES --- */
+@media (max-width: 768px) {
+    body {
+        padding-left: 0; /* Quitamos el padding lateral en móvil */
+    }
+
+    .menu-lateral {
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        top: auto;
+        transform: none;
+        border-radius: 20px 20px 0 0;
+        padding: 10px 0;
+    }
+
+    .menu-lateral:hover {
+        width: 100%;
+    }
+    
+    .menu-lateral:hover ~ .contenido-principal {
+        margin-left: 0; /* Anulamos el margen del contenido */
+    }
+
+    .menu-lateral ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .menu-lateral ul li a {
+        flex-direction: column;
+        background-color: transparent;
+    }
+    
+    .menu-lateral ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .texto-link {
+        opacity: 1;
+        pointer-events: auto;
+        margin-left: 0;
+        font-size: 12px;
+    }
+
+    .menu-lateral ul li a .fa-solid {
+        margin-bottom: 4px;
+    }
+}
+
+/* ... (pega todo el CSS anterior aquí) ... */
+
+/* Estilos para el contenido principal */
+.contenido-principal {
+    padding: 20px;
+    transition: margin-left 0.5s ease;
+}
+
+/* --- NUEVOS ESTILOS PARA CONTENIDO DINÁMICO --- */
+.contenido-seccion {
+    display: none; /* Oculta todas las secciones por defecto */
+    animation: fadeIn 0.5s ease-in-out; /* Animación de entrada */
+}
+
+.contenido-seccion.activa {
+    display: block; /* Muestra solo la sección activa */
+}
+
+/* Pequeña animación de aparición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo para el botón del menú activo */
+.menu-lateral ul li a.activo {
+    background-color: var(--color-principal-hover);
+    font-weight: bold;
+}
+
+/* Estilos para el formulario de contacto (opcional) */
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+}
+#contacto input, #contacto textarea {
+    padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit;
+}
+#contacto button {
+    padding: 12px; background-color: var(--color-principal); color: white; border: none; border-radius: 5px; cursor: pointer;
+}
+
+
+/* ... (pega el resto del CSS, incluyendo la @media query, aquí) ... */
